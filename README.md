@@ -1,102 +1,34 @@
-🏨 Uncovering Patterns in Hotel Booking Data for Operational Efficiency and Revenue Growth
+Uncovering Patterns in Hotel Booking Data for Operational Efficiency and Revenue Growth
 
-🧾 Executive Summary
-This case study dives deep into a real-world dataset of hotel bookings to uncover valuable patterns that can help increase revenue and improve operational decisions.
-Think like a hotel manager — you want to know who books your hotel, when, how long they stay, and what influences how much they pay.
+This project involved a deep dive into a real-world hotel booking dataset to uncover valuable patterns for improving operational efficiency and increasing revenue. I acted like a hotel manager, focusing on understanding who books, when, for how long, and what influences pricing.
 
-We analyzed:
+---
 
-How early or late guests book (Lead Time)
-Which countries guests come from
-Room upgrades and reassignments
-Duration of stay
-What affects pricing (ADR – Average Daily Rate)
-All of this was done using Python, with help from libraries like Pandas, Seaborn, and Matplotlib. The goal is to support data-driven strategies in the hospitality industry.
+### **Methodology**
 
-📚 Table of Contents
-Introduction
-Background / Context
-Analysis
-Conclusion
-1. Introduction
-We started with a rich dataset containing over 100,000 rows — each representing a hotel booking. It includes:
+I started with a large dataset containing over 100,000 hotel bookings. The data included booking specifics, guest information, and revenue details.
 
-Booking and stay details (e.g., dates, room type, number of guests)
-Guest information (e.g., nationality, whether they are repeat guests)
-Revenue-related info (e.g., ADR, deposit type)
-Why this matters: These insights help hotels improve customer targeting, optimize pricing, and reduce cancellations.
+1.  **Data Cleaning**: The raw data had several challenges, including missing values in columns like "company" and "agent," and dates that were separated into different columns. I handled these issues by filling or dropping missing values and combining the date columns for better time series analysis.
+2.  **Analysis**: My analysis was broken down into three key parts:
+    * **Univariate Analysis**: I examined single variables to understand basic distributions. For example, I found that most bookings occur 0-20 days before check-in and the Average Daily Rate (ADR) typically falls between \$50 and \$150.
+    * **Bivariate/Multivariate Analysis**: I explored the relationships between multiple variables. This analysis revealed that repeat guests and those booking through corporate channels often pay more. It also showed that room reassignments tended to correlate with fewer cancellations.
+    * **Time Series Analysis**: I looked at trends over time, discovering that **July and August** are the peak booking months and that **Mondays** have the most bookings.
 
-2. Background / Context
-The dataset includes bookings from two types of hotels:
+---
 
-🏙️ City Hotel
-🌴 Resort Hotel
-Challenges in raw data:
+### **Key Findings and Business Value**
 
-❌ Missing values (e.g., in "company", "agent", "children")
-🧩 Date parts were stored in separate columns (day, month, year)
-How we handled it:
+The analysis provided several actionable insights:
 
-Cleaned missing values thoughtfully
-Combined date columns into one for better time series analysis
-3. Analysis
-🔹 Univariate Analysis (Single Variable at a Time)
-Helps us understand basic distributions and trends.
+* **Pricing and Cancellation Behavior**: I found that lead time and customer type are strong predictors of pricing and cancellation risk.
+* **Customer Segmentation**: Guests from countries like the UK and France tend to book earlier and stay longer, while transient guests, despite shorter stays, bring in high revenue.
+* **Operational Optimization**: Seasonal trends, like the summer peak and Monday booking surge, can help hotels optimize marketing efforts, staffing, and inventory management.
+* **Correlation and Hypothesis Testing**: I used a **correlation heatmap** to find relationships, such as a weak positive link between ADR and special requests. I also used statistical tests to confirm hypotheses, like whether repeat guests pay more than first-timers. 
 
-Most bookings happen 0–20 days before check-in
-Room types A and D are the most booked
-ADR (Average Daily Rate) mostly lies between 50–150, with a peak near 100
-Visuals used:
+---
 
-Bar charts for categorical columns
-Histograms for continuous columns
-🔸 Bivariate/Multivariate Analysis (Comparing 2+ Variables)
-We explored relationships like:
+### **Tools Used**
 
-Do repeat guests pay more?
-Does lead time affect cancellations?
-Do guests from certain countries spend more?
-Key insights:
+The project was executed using **Python** with libraries like **Pandas, Seaborn, Matplotlib, and SciPy**. The entire process was documented and run within a **Jupyter Notebook**.
 
-Guests who are repeat customers or book via corporate channels tend to pay more
-Room reassignment usually correlates with fewer cancellations
-Some booking channels result in lower prices (e.g., agent bookings)
-Boxplots and grouped bar charts helped bring these patterns to light.
-
-📈 Time Series Analysis (Trends Over Time)
-July & August = 🔥 Peak booking months
-Mondays have the most bookings — possibly people plan trips after weekends
-Over time, both hotels show growing volume → 📈 Business expansion
-🔗 Correlation
-We used correlation heatmaps to find relationships between variables.
-
-Example:
-
-adr (price per night) and total_special_requests have a weak positive relationship → people who pay more often ask for more services
-🧪 Hypothesis Testing
-We asked statistical questions like:
-
-Do guests who book earlier cancel less often?
-Do repeated guests pay more than first-timers?
-And used t-tests and chi-square tests to confirm or reject those hypotheses.
-
-🧹 Data Cleaning Summary
-Column	Action
-company	Dropped (too many NaNs)
-agent	Filled with most common ID
-country	Filled with top occurring
-children	Filled with 0 or mode
-✅ Conclusion
-By analyzing this dataset, we learned:
-
-Lead time and customer type are strong indicators of pricing and cancellation behavior
-Guests from countries like UK & France tend to book earlier and stay longer
-Transient guests bring high revenue despite shorter stays
-Room upgrades, booking channels, and deposit types impact booking reliability
-Seasonal trends (summer peaks, Monday surges) help optimize marketing & operations
-Business Value: These insights can help hotels with staffing, pricing, inventory, and customer satisfaction planning.
-
-🛠 Tools Used
-Python (Pandas, Seaborn, Matplotlib, SciPy)
-Jupyter Notebook
-Excel (initial review)
+In conclusion, this project demonstrated how data-driven analysis can provide hotels with crucial information to improve their operational efficiency, enhance customer targeting, and ultimately increase revenue.
